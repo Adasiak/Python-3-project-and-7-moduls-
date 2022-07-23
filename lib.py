@@ -5,6 +5,7 @@ import random
 import os
 import datetime
 import calendar
+from pathlib import Path
 
 def clearConsole():
     """clear clonsole 
@@ -28,5 +29,3 @@ def get_value(information_about_input_value):
         except ValueError:
             print("Please enter a string to search")
    
-def print_string(string_to_show1="",string_to_show2=""):
-    print(string_to_show1 , string_to_show2)
