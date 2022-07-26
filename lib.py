@@ -13,7 +13,7 @@ def clearConsole():
     command = "clear"
     os.system(command)
     
-def get_value(information_about_input_value):
+def get_value(information_about_input_value, data_format = "str",separator = "-"):
     """get value from user
 
     Args:
@@ -24,8 +24,30 @@ def get_value(information_about_input_value):
     """
     while True:
         try:
-            string_to_search = str(input(information_about_input_value))
-            return string_to_search
-        except ValueError:
-            print("Please enter a string to search")
-   
+            match data_format:
+                case "str":
+                    try:
+                        string_to_search = str(input(information_about_input_value))
+                        return string_to_search
+                    except ValueError:
+                        print("Please enter a string to search")
+                case "int":
+                    try:
+                        string_to_search = int(input(information_about_input_value))
+                        return string_to_search
+                    except ValueError:
+                        print("Please enter a intiger to search")
+                case "datetime":
+                    try:
+                        string_to_search = str(input(information_about_input_value))
+                        try:
+                            day , month , year = str(string_to_search).split(separator) 
+                        except:
+                            print(f"Please use {separator} to separate date")
+
+                        date = datetime.datetime(int(year), int(month), int(day))    
+                        return date
+                    except ValueError:
+                        print("Please enter a datetime to search")      
+        except:
+            print("Please select format from: str, int, datetime")
