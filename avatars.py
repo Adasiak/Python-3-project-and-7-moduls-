@@ -13,3 +13,4 @@ with open("./avatars/avatar.svg" , "wb") as file:
     file.write(response.content)
 
 os.system("open avatar.svg")
+
