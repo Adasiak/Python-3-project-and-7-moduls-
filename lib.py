@@ -12,6 +12,8 @@ def clearConsole():
     """
     command = "clear"
     os.system(command)
+    command = "cls"
+    os.system(command)
     
 def get_value(information_about_input_value, data_format = "str",separator = "-"):
     """get value from user
