@@ -51,3 +51,17 @@ def get_value(information_about_input_value, data_format = "str",separator = "-"
                         print("Please enter a datetime to search")      
         except:
             print("Please select format from: str, int, datetime")
+
+
+def name(name_of_file,name_of_file2 = ""):
+    """
+    ####### name(name_of_file): ##########
+    # FUNCTION RETURN WHOLE PATH TO FILE #
+    ######################################
+    """ 
+    file_path = os.path.abspath(os.getcwd())
+    if name_of_file2 != "":
+        name =  file_path + "\\" + name_of_file + "\\" + name_of_file2
+    else:
+        name =  file_path + "\\" + name_of_file
+    return str(name)
